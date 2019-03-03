@@ -31,7 +31,8 @@ export const loginUser = data => dispatch => {
             dispatch({
                 type: LOGGED_IN_USER,
                 payload: data.email
-            })
+            });
+            window.location.assign('/products');
         })
         .catch(error =>{
             dispatch(loginErrors(error));

@@ -12,11 +12,6 @@ class Login extends Component{
             'loading': 'false'
         };
     }
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.auth.isAuthenticated){
-            nextProps.history.push('/products')
-        }
-    }
 
     onSubmit = e => {
         e.preventDefault();
@@ -25,7 +20,6 @@ class Login extends Component{
             email: this.state.email,
             password: this.state.password
         };
-        console.log(data);
         this.props.loginUser(data);
         this.setState({
             loading: true
@@ -68,8 +62,5 @@ Login.propTypes = {
     history: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
-    auth: state.auth
-});
 
-export default connect(mapStateToProps, {loginUser})(Login)
+export default connect(null, {loginUser})(Login)
