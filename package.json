@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,8 @@
     "redux": "^4.0.1",
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "express": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
